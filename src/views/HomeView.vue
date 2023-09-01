@@ -1,4 +1,6 @@
 <template>
+  <product-slider />
+
   <section class="bg-white py-8">
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
       <nav id="store" class="w-full z-30 top-0 px-6 py-1">
@@ -33,10 +35,13 @@
 </template>
 <script>
 import Product from '../components/Product.vue';
+import ProductSlider from '../components/ProductSlider.vue';
+
 export default {
   name: 'home',
   components: {
-    'product': Product
+    'product': Product,
+    'ProductSlider': ProductSlider,
   }
 }
 </script>
