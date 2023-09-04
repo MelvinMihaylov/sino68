@@ -29,10 +29,9 @@
             </div>
 
             <div class="order-1 md:order-2">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
-                    href="#">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800" href="#">
                     <i class="fa-solid fa-door-open mr-2"></i>
-                    Sino68 - Метални изделия и конструкции
+                    Sino68
                 </a>
             </div>
 
