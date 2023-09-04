@@ -32,7 +32,7 @@
                 <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
                     href="#">
                     <i class="fa-solid fa-door-open mr-2"></i>
-                    Sino68
+                    Sino68 - Метални изделия и конструкции
                 </a>
             </div>
 

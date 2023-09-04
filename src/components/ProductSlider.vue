@@ -6,7 +6,7 @@
                 checked="checked" />
             <div class="carousel-item absolute opacity-0" style="height: 50vh">
                 <img class="block h-full w-full mx-auto pt-6 md:pt-0 md:items-center bg-cover bg-center"
-                    src="../../public/images/slider_images/pregrajdeniq-na-terasa.jpg" alt="">
+                    src="/images/slider_images/pregrajdeniq-na-terasa.jpg" alt="">
             </div>
             <label for="carousel-3"
                 class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
@@ -17,7 +17,7 @@
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden />
             <div class="carousel-item absolute opacity-0 bg-cover bg-center" style="height: 50vh">
                 <img class="block h-full w-full mx-auto pt-6 md:pt-0 md:items-center bg-cover bg-center"
-                    src="../../public/images/slider_images/ograda.jpg" alt="">
+                    src="/images/slider_images/ograda.jpg" alt="">
             </div>
             <label for="carousel-1"
                 class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
@@ -28,7 +28,7 @@
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden />
             <div class="carousel-item absolute opacity-0" style="height: 50vh">
                 <img class="block h-full w-full mx-auto pt-6 md:pt-0 md:items-center bg-cover bg-center"
-                    src="../../public/images/slider_images/klasicheska-ograda.jpg" alt="">
+                    src="/images/slider_images/klasicheska-ograda.jpg" alt="">
             </div>
             <label for="carousel-2"
                 class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
