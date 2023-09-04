@@ -340,7 +340,7 @@ export default {
       return product;
     },
     handleScroll() {
-      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
         this.getProduct()
       }
     }
