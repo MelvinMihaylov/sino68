@@ -1,6 +1,11 @@
 <template>
   <nav-bar />
 
+  <div>
+    <LoadingScreen v-if="isLoading"></LoadingScreen>
+    <p>Hello World!</p>
+  </div>
+
   <router-view v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
       <div :key="route.name">
@@ -17,13 +22,25 @@ import NavBar from './components/NavBar.vue';
 import HomeView from './views/HomeView.vue';
 import BaseFooter from './components/BaseFooter.vue'
 import ScrollIndicator from './components/ScrollIndicator.vue'
+import LoadingScreen from './components/LoadingScreen.vue';
 
 export default {
   components: {
     'HomeView': HomeView,
     'NavBar': NavBar,
     'BaseFooter': BaseFooter,
-    'ScrollIndicator': ScrollIndicator
+    'ScrollIndicator': ScrollIndicator,
+    'LoadingScreen': LoadingScreen
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 300);
   }
 }
 </script>
