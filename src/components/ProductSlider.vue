@@ -1,6 +1,6 @@
 <template>
     <div class="carousel relative container mx-auto" style="max-width: 1600px">
-        <div class="carousel-inner relative overflow-hidden w-full rounded-b-3xl">
+        <div class="carousel-inner relative overflow-hidden w-full rounded-b-xl">
             <!--Slide 1-->
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden
                 checked="checked" />
