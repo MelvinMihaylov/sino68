@@ -14,7 +14,7 @@ export default {
 #loading {
     position: absolute;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.61);
+    background: radial-gradient(circle, rgba(248, 198, 141, 0.13) 0%, rgba(94, 50, 3, 0.164) 100%);
     height: 100vh;
     width: 100vw;
     text-align: center;

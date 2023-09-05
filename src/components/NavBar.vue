@@ -17,7 +17,7 @@
 
                 <input class="hidden" type="checkbox" id="menu-toggle" />
 
-                <div class="md:relative absolute top-6 md:top-0 left-0 hidden md:flex md:items-center md:w-auto order-3 md:order-1 text-white md:bg-white bg-slate-300/25 backdrop-blur-md rounded-lg md:shadow-none"
+                <div class="md:relative absolute top-6 md:top-0 left-0 hidden md:flex md:items-center md:w-auto order-3 md:order-1 text-white md:bg-transparent bg-slate-300/25 backdrop-blur-md rounded-lg md:shadow-none"
                     id="menu">
                     <nav id="nav">
                         <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
