@@ -12,7 +12,7 @@ function myFunction() {
 
 <template>
     <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
+        <div class="progress-bar bg-gradient-to-r from-red-400 from-30% via-red-800 via-60% to-purple-900 to-90%" id="myBar"></div>
     </div>
 </template>
 
@@ -20,14 +20,13 @@ function myFunction() {
 /* The progress container (grey background) */
 .progress-container {
     width: 100%;
-    height: 8px;
+    height: 9px;
     background: rgb(243, 236, 223);
 }
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-    height: 8px;
-    background: rgb(156, 154, 154);
+    height: 11px;
     width: 0%;
 }
 </style>

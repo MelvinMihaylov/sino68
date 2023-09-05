@@ -345,7 +345,7 @@ export default {
       return product;
     },
     handleScroll() {
-      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 500) {
         this.getProduct()
       }
     }
@@ -360,7 +360,7 @@ export default {
 <style>
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.8s ease;
+  transition: all 0.8s ease-in-out;
 }
 
 .list-enter-from,

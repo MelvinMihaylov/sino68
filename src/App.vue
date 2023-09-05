@@ -1,32 +1,37 @@
 <template>
-  <nav-bar />
-
-  <div>
-    <LoadingScreen v-if="isLoading"></LoadingScreen>
-    <p>Hello World!</p>
-  </div>
-
-  <router-view v-slot="{ Component, route }">
-    <transition name="fade" mode="out-in">
-      <div :key="route.name">
-        <component :is="Component"></component>
+  
+  <div id="page-container">
+    <div id="content-wrap">
+      <!-- all other page content -->
+      <nav-bar />
+    
+      <div>
+        <LoadingScreen v-if="isLoading"></LoadingScreen>
+        <p>Hello World!</p>
       </div>
-    </transition>
-  </router-view>
-
-  <base-footer />
+    
+      <router-view v-slot="{ Component, route }">
+        <transition name="fade" mode="out-in">
+          <div :key="route.name">
+            <component :is="Component"></component>
+          </div>
+        </transition>
+      </router-view>
+   </div>
+   <footer id="footer">
+  <base-footer/>
+   </footer>
+ </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
-import HomeView from './views/HomeView.vue';
 import BaseFooter from './components/BaseFooter.vue'
 import ScrollIndicator from './components/ScrollIndicator.vue'
 import LoadingScreen from './components/LoadingScreen.vue';
 
 export default {
   components: {
-    'HomeView': HomeView,
     'NavBar': NavBar,
     'BaseFooter': BaseFooter,
     'ScrollIndicator': ScrollIndicator,
@@ -37,7 +42,7 @@ export default {
       isLoading: true
     };
   },
-  mounted() {
+  beforeCreate() {
     setTimeout(() => {
       this.isLoading = false;
     }, 700);
@@ -57,5 +62,21 @@ export default {
 .fade-leave-to {
   transition: all 0.15s linear;
   opacity: 0;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
 }
 </style>

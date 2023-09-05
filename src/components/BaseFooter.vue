@@ -1,6 +1,6 @@
 <template>
     <!-- Footer container -->
-    <footer class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-500 dark:text-neutral-200 lg:text-left">
+    <footer style="background-image: url('../../public/images/footer_images/footerbackground.jpg')" class="bg-no-repeat bg-cover bg-center bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-500 dark:text-neutral-200 lg:text-left">
         <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
         <div class="mx-6 py-4 text-center md:text-left">
             <div class="flex justify-evenly items-center md:grid-cols-2 lg:grid-cols-4">
@@ -59,7 +59,7 @@
         </div>
 
         <!--Copyright section-->
-        <div class="bg-neutral-200 p-4 text-center dark:bg-neutral-600">
+        <div style="background-image: url('../../public/images/footer_images/coppyRight.jpg')" class="bg-cover bg-no-repeat bg-bottom bg-neutral-200 p-4 text-center dark:bg-neutral-600">
             <span>© 2023 Sino68:</span>
             <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="https://tailwind-elements.com/"> Всички
                 права запазени</a>
@@ -69,6 +69,6 @@
 
 <script>
 export default {
-    name: "BaseFooter"
+    name: "BaseFooter",
 }
 </script>
