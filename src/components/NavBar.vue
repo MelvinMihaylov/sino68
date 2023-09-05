@@ -31,11 +31,12 @@
             </div>
 
             <div class="order-1 md:order-2">
-                <a class="fixed left-1/2 -translate-y-1/2 -translate-x-1/2 items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800"
+                <router-link to="/"
+                    class="fixed left-1/2 -translate-y-1/2 -translate-x-1/2 items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800"
                     href="#">
                     <i class="fa-solid fa-door-open mr-2"></i>
                     Sino68
-                </a>
+                </router-link>
             </div>
 
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
