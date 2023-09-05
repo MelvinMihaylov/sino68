@@ -59,7 +59,7 @@
         </div>
 
         <!--Copyright section-->
-        <div style="background-image: url('../../public/images/footer_images/coppyRight.jpg')" class="bg-cover bg-no-repeat bg-bottom bg-neutral-200 p-4 text-center dark:bg-neutral-600">
+        <div style="background-image: url('../../public/images/footer_images/coppyRight.jpg')" class="bg-cover bg-no-repeat bg-top bg-middle p-4 text-center">
             <span>© 2023 Sino68:</span>
             <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="https://tailwind-elements.com/"> Всички
                 права запазени</a>
