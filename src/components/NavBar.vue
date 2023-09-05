@@ -2,7 +2,7 @@
     <!--Nav-->
     <nav id="header" class="z-50 bg-white w-full top-0 border-b fixed transition-all duration-500 ease-in-out"
         :class="{ '-translate-y-[calc(100%-7px)]': hideNavigation }">
-        <div id="navBar" class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+        <div id="navBar" class="w-full mx-auto flex flex-wrap items-center justify-evenly text-center mt-0 px-6 py-3">
             <label for="menu-toggle" class="cursor-pointer md:hidden block">
                 <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20">
