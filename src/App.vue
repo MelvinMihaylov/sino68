@@ -15,7 +15,7 @@ export default {
   components: {
     'HomeView': HomeView,
     'NavBar': NavBar,
-    'BaseFooter': BaseFooter
+    'BaseFooter': BaseFooter,
   }
 }
 </script>
