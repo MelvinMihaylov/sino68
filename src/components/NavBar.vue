@@ -4,31 +4,36 @@
         :class="{ '-translate-y-[calc(100%-7px)]': hideNavigation }">
         <div id="navBar"
             class="w-full mx-auto flex flex-wrap items-center justify-evenly gap-20 text-center mt-0 px-6 py-3">
-            <label for="menu-toggle" class="cursor-pointer md:hidden block">
-                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 20 20">
-                    <title>menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </label>
-            <input class="hidden" type="checkbox" id="menu-toggle" />
 
-            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
-                <nav>
-                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li>
-                            <router-link to="/"
-                                class="inline-block no-underline hover:text-black hover:underline py-2 px-4">Каталог
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link to="about"
-                                class="inline-block no-underline hover:text-black hover:underline py-2 px-4">За нас
-                            </router-link>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="relative">
+
+                <label id="menuButton" for="menu-toggle" class="cursor-pointer md:hidden block">
+                    <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20">
+                        <title>menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </label>
+
+                <input class="hidden" type="checkbox" id="menu-toggle" />
+
+                <div class="md:relative absolute top-6 md:top-0 left-0 hidden md:flex md:items-center md:w-auto order-3 md:order-1 text-white md:bg-white bg-slate-300/25 backdrop-blur-md rounded-lg md:shadow-none"
+                    id="menu">
+                    <nav id="nav">
+                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                            <li>
+                                <router-link to="/" class="inline-block no-underline hover:text-black py-2 px-4">Каталог
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="about" class="inline-block no-underline hover:text-black py-2 px-4">За нас
+                                </router-link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
+
 
             <div class="order-1 md:order-2">
                 <router-link to="/"
@@ -89,6 +94,12 @@ export default {
 
                     const scrollTopPosition =
                         window.pageYOffset || document.documentElement.scrollTop;
+
+                    const menuButton = document.getElementById('menuButton')
+                    const menuToggle = document.getElementById('menu-toggle')
+                    if (menuToggle.checked) {
+                        menuButton.click()
+                    }
 
                     if (scrollTopPosition > lastScrollTop) {
                         this.hideNavigation = true
