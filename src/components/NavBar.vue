@@ -1,7 +1,8 @@
 <template>
     <!--Nav-->
-    <nav id="header" class="sticky z-50 bg-white w-full top-0 border-b mb-8">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+    <nav id="header" class="z-50 bg-white w-full top-0 border-b fixed transition-all duration-500 ease-in-out"
+        :class="{ '-translate-y-[calc(100%-7px)]': hideNavigation }">
+        <div id="navBar" class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
             <label for="menu-toggle" class="cursor-pointer md:hidden block">
                 <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20">
@@ -68,6 +69,70 @@ export default {
     name: "NavBar",
     components: {
         'ScrollIndicator': ScrollIndicator
+    },
+    data() {
+        return {
+            hideNavigation: false
+        }
+    },
+    methods: {
+        handleScroll() {
+            let lastScrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+
+            window.addEventListener(
+                'scroll',
+                () => {
+
+                    const scrollTopPosition =
+                        window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (scrollTopPosition > lastScrollTop) {
+                        this.hideNavigation = true
+                    } else if (scrollTopPosition < lastScrollTop) {
+                        this.hideNavigation = false
+                    }
+                    lastScrollTop =
+                        scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+                },
+                false,
+            );
+        }
+    },
+    mounted() {
+        this.handleScroll()
     }
 }
 </script>
+
+<style>
+#navBar {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    margin: 10px;
+    top: 0;
+    position: sticky;
+    height: 50px;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+</style>

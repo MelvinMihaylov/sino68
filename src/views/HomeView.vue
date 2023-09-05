@@ -27,11 +27,16 @@
           </div>
         </div>
       </nav>
-      <product v-for="(product, index) in loadedProducts" :key="index" :product="product" />
+
+      <TransitionGroup name="list">
+        <product v-for="(product, index) in loadedProducts" :key="index" :product="product" />
+      </TransitionGroup>
+
 
     </div>
   </section>
 </template>
+
 <script>
 import Product from '../components/Product.vue';
 import ProductSlider from '../components/ProductSlider.vue';
@@ -351,3 +356,16 @@ export default {
   },
 }
 </script>
+
+<style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>
