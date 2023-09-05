@@ -1,6 +1,6 @@
 <template>
     <!--Nav-->
-    <nav id="header" class="sticky z-50 bg-white w-full z-30 top-0 border-b mb-8">
+    <nav id="header" class="sticky z-50 bg-white w-full top-0 border-b mb-8">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
             <label for="menu-toggle" class="cursor-pointer md:hidden block">
                 <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
