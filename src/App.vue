@@ -44,7 +44,7 @@ export default {
   beforeCreate() {
     setTimeout(() => {
       this.isLoading = false
-    }, 800)
+    }, 1200)
   }
 }
 </script>
