@@ -1,5 +1,8 @@
 <template>
-  <product-slider />
+  <!-- <product-slider /> -->
+  <div class="object-scale-down h-[580px]">
+    <AutomaticProductSlider />
+  </div>
 
   <section class="bg-white py-8">
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
@@ -39,13 +42,15 @@
 
 <script>
 import Product from '../components/Product.vue';
-import ProductSlider from '../components/ProductSlider.vue';
+// import ProductSlider from '../components/ProductSlider.vue';
+import AutomaticProductSlider from '../components/AutomaticProductSlider.vue';
 
 export default {
   name: 'home',
   components: {
     'product': Product,
-    'ProductSlider': ProductSlider,
+    // 'ProductSlider': ProductSlider,
+    'AutomaticProductSlider': AutomaticProductSlider
   },
   data() {
     return {
