@@ -1,6 +1,6 @@
 <template>
   <!-- <product-slider /> -->
-  <div class="object-scale-down h-[580px]">
+  <div class="h-[270px] md:h-[580px]">
     <AutomaticProductSlider />
   </div>
 

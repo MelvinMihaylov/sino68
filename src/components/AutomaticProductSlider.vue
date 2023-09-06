@@ -70,7 +70,9 @@ export default {
 }
 
 img {
-    height: 600px;
+    height: auto;
+    max-height: 600px;
+    min-height: 300px;
     width: 100%
 }
 
