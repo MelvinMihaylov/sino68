@@ -6,7 +6,7 @@
 
   <section class="bg-white py-8">
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-      <nav id="store" class="w-full z-30 top-0 px-6 py-1">
+      <nav id="store" class="w-full top-0 px-6 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
           <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl" href="#">
             Каталог
@@ -32,30 +32,37 @@
       </nav>
 
       <TransitionGroup name="list">
-        <product v-for="(product, index) in loadedProducts" :key="index" :product="product" />
+        <product @click.prevent="productClick(product)" v-for="(product) in loadedProducts" :key="product.id"
+          :product="product" />
       </TransitionGroup>
-
 
     </div>
   </section>
+  <Transition name="fadeProduct">
+    <div v-if="showProductModal">
+      <SingleProductModal @closeModal="closeModal" :product="product" :key="product.id" />
+    </div>
+  </Transition>
 </template>
 
 <script>
 import Product from '../components/Product.vue';
-// import ProductSlider from '../components/ProductSlider.vue';
 import AutomaticProductSlider from '../components/AutomaticProductSlider.vue';
+import SingleProductModal from '../components/SingleProductModal.vue';
 
 export default {
   name: 'home',
   components: {
     'product': Product,
-    // 'ProductSlider': ProductSlider,
-    'AutomaticProductSlider': AutomaticProductSlider
+    'AutomaticProductSlider': AutomaticProductSlider,
+    'SingleProductModal': SingleProductModal
   },
   data() {
     return {
       products: [],
       loadedProducts: [],
+      showProductModal: false,
+      product: []
     }
   },
   methods: {
@@ -353,6 +360,13 @@ export default {
       if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 500) {
         this.getProduct()
       }
+    },
+    productClick(product) {
+      this.showProductModal = true;
+      this.product = product;
+    },
+    closeModal() {
+      this.showProductModal = false;
     }
   },
   mounted() {
@@ -372,5 +386,15 @@ export default {
 .list-leave-to {
   opacity: 0;
   transform: translateY(100px);
+}
+
+.fadeProduct-enter-active,
+.fadeProduct-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.fadeProduct-enter-from,
+.fadeProduct-leave-to {
+  opacity: 0;
 }
 </style>

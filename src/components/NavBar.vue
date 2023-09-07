@@ -1,6 +1,6 @@
 <template>
     <!--Nav-->
-    <nav id="header" class="z-50 bg-white w-full top-0 border-b fixed transition-all duration-500 ease-in-out"
+    <nav id="header" class="z-40 bg-white w-full top-0 border-b fixed transition-all duration-500 ease-in-out"
         :class="{ '-translate-y-[calc(100%-7px)]': hideNavigation }">
         <div id="navBar"
             class="w-full mx-auto flex flex-wrap items-center justify-evenly gap-20 text-center mt-0 px-6 py-3">

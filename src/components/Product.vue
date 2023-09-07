@@ -1,4 +1,3 @@
-
 <template>
     <div class="w-full h-96 md:w-1/3 xl:w-1/4 p-8 flex flex-col mb-5">
         <a href="#">

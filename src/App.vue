@@ -6,17 +6,18 @@
 
       <div>
         <LoadingScreen v-if="isLoading"></LoadingScreen>
-        <p>Hello World!</p>
+        <p></p>
       </div>
 
       <router-view v-slot="{ Component, route }">
-        <transition name="fade" mode="out-in">
+        <transition name="nextPageFade" mode="out-in">
           <div :key="route.name">
             <component :is="Component"></component>
           </div>
         </transition>
       </router-view>
     </div>
+
     <footer id="footer">
       <base-footer />
     </footer>
@@ -25,16 +26,16 @@
 
 <script>
 import NavBar from './components/NavBar.vue'
-import BaseFooter from './components/BaseFooter.vue'
 import ScrollIndicator from './components/ScrollIndicator.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
+import BaseFooter from './components/basefooter.vue'
 
 export default {
   components: {
     NavBar: NavBar,
     BaseFooter: BaseFooter,
     ScrollIndicator: ScrollIndicator,
-    LoadingScreen: LoadingScreen
+    LoadingScreen: LoadingScreen,
   },
   data() {
     return {
@@ -50,15 +51,15 @@ export default {
 </script>
 
 <style>
-.fade-enter-from {
+.nextPageFade-enter-from {
   opacity: 0;
 }
 
-.fade-enter-active {
+.nextPageFade-enter-active {
   transition: all 0.15s linear;
 }
 
-.fade-leave-to {
+.nextPageFade-leave-to {
   transition: all 0.15s linear;
   opacity: 0;
 }

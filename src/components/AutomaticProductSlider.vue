@@ -1,10 +1,8 @@
 <template>
     <div>
-        <transition-group name="fade" tag="div">
-            <div v-for="i in [currentIndex]" :key="i">
-                <img :src="currentImg" />
-            </div>
-        </transition-group>
+        <div v-for="i in [currentIndex]" :key="i">
+            <img :src="currentImg" />
+        </div>
         <a class="prev" @click="prev" href="#">&#10094; Previous</a>
         <a class="next" @click="next" href="#">&#10095; Next</a>
     </div>
@@ -32,7 +30,7 @@ export default {
 
     methods: {
         startSlide: function () {
-            this.timer = setInterval(this.next, 2000);
+            this.timer = setInterval(this.next, 2500);
         },
 
         next: function () {
@@ -52,23 +50,6 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
-    transition: all 0.9s ease;
-    overflow: hidden;
-    visibility: visible;
-    position: absolute;
-    width: 100%;
-    opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
-    visibility: hidden;
-    width: 100%;
-    opacity: 0;
-}
-
 img {
     height: auto;
     max-height: 600px;
