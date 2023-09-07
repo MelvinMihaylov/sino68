@@ -1,6 +1,7 @@
 <template>
     <!-- Footer container -->
-    <footer style="background-image: url('images/footer_images/footerbackground.jpg')" class="bg-no-repeat bg-cover bg-center bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-500 dark:text-neutral-200 lg:text-left">
+    <footer style="background-image: url('images/footer_images/footerbackground.jpg')"
+        class="bg-no-repeat bg-cover bg-center bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-500 dark:text-neutral-200 lg:text-left">
         <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
         <div class="mx-6 py-4 text-center md:text-left">
             <div class="flex justify-evenly items-center md:grid-cols-2 lg:grid-cols-4">

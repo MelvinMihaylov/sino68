@@ -19,7 +19,7 @@
     </div>
 
     <footer id="footer">
-      <base-footer />
+      <MyBaseFooter />
     </footer>
   </div>
 </template>
@@ -28,14 +28,14 @@
 import NavBar from './components/NavBar.vue'
 import ScrollIndicator from './components/ScrollIndicator.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
-import BaseFooter from './components/basefooter.vue'
+import MyBaseFooter from './components/MyBaseFooter.vue'
 
 export default {
   components: {
-    NavBar: NavBar,
-    BaseFooter: BaseFooter,
-    ScrollIndicator: ScrollIndicator,
-    LoadingScreen: LoadingScreen,
+    'NavBar': NavBar,
+    'MyBaseFooter': MyBaseFooter,
+    'ScrollIndicator': ScrollIndicator,
+    'LoadingScreen': LoadingScreen,
   },
   data() {
     return {
