@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-24 dark:bg-gray-900">
+  <section class="pt-24 bg-gray-900">
     <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="place-self-center mr-auto lg:col-span-7">
         <h1 class="mb-10 max-w-2xl text-2xl font-extrabold leading-none md:text-4xl xl:text-4xl dark:text-white">
