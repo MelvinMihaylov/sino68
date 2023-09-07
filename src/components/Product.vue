@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-96 md:w-1/3 xl:w-1/4 p-8 flex flex-col mb-5">
-        <a href="#">
+        <a>
             <img class="hover:grow hover:shadow-lg rounded-lg" style="width: 500px; height: 250px;" :src="product.imgSRC" />
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2 m-1">

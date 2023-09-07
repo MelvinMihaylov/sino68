@@ -32,8 +32,8 @@
       </nav>
 
       <TransitionGroup name="list">
-        <product @click.prevent="productClick(product)" v-for="(product) in loadedProducts" :key="product.id"
-          :product="product" />
+        <product class="cursor-pointer" @click.prevent="productClick(product)" v-for="(product) in loadedProducts"
+          :key="product.id" :product="product" />
       </TransitionGroup>
 
     </div>

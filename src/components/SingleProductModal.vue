@@ -7,11 +7,11 @@
 
                 <div ref="deleteModalRef"
                     class="md:max-w-6xl max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
+                    <a>
                         <img id="image" class="rounded-t-lg" :src="product.imgSRC" alt="" />
                     </a>
                     <div class="p-5">
-                        <a href="#">
+                        <a>
                             <h4 id="category" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {{ product.category }}
                             </h4>

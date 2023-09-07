@@ -30,7 +30,7 @@ export default {
 
     methods: {
         startSlide: function () {
-            this.timer = setInterval(this.next, 2500);
+            this.timer = setInterval(this.next, 3000);
         },
 
         next: function () {
