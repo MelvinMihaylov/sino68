@@ -70,7 +70,7 @@ export default {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;
+  padding-bottom: 10px;
   /* Footer height */
 }
 
