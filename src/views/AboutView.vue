@@ -2,16 +2,16 @@
   <section class="pt-24 dark:bg-gray-900">
     <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="place-self-center mr-auto lg:col-span-7">
-        <h1 class="mb-10 max-w-2xl text-3xl font-extrabold leading-none md:text-5xl xl:text-5xl dark:text-white">
-          Каталог за изделия от ковано желязо - Sino68</h1>
+        <h1 class="mb-10 max-w-2xl text-2xl font-extrabold leading-none md:text-4xl xl:text-4xl dark:text-white">
+          Каталог за метални изделия и конструкции</h1>
         <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          Добре дошли в света на изкуството и елегантността на кованото желязо!
+          Добре дошли в света на изкуството и елегантността на изделията от метал!
           <br><br>
           Нашият уебсайт е мястото, където може да откриете уникални и изискани изделия, които ще преобразят вашия дом и
           градина.
           <br><br>
           Благодарим ви, че сте избрали да ни посетите и се надяваме да ви вдъхновим да създадете елегантен и уютен дом с
-          нашите изделия от ковано желязо. Не се колебайте да се свържете с нас за всякакви въпроси и консултации.
+          нашите изделия от метал. Не се колебайте да се свържете с нас за всякакви въпроси и консултации.
         </p>
         <a href="/"
           class="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -37,7 +37,7 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
       <h2
         class="mb-8 text-xl md:text-4xl tracking-tight leading-tight text-center text-gray-500 lg:mb-16 dark:text-gray-500">
-        Качествени изделия от ковано желязо
+        Качествени изделия от метал
       </h2>
       <div
         class="flex justify-evenly md:text-xl text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
@@ -155,7 +155,7 @@
         </p>
         <p>Нашите майстори с гордост съчетават
           традиционното изкуство на коването със съвременните тенденции, за да създават изключителни произведения на
-          изкуството от ковано желязо.</p>
+          изкуството от метал.</p>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
         <img class="w-full rounded-lg" src="/images/about_images/vrata2.jpg" alt="office content 1">
@@ -167,8 +167,8 @@
   <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center">
-        <h2 class="mb-4 text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">За повече информация,
-          очакваме обаждания на посочените номера
+        <h2 class="mb-4 text-2xl font-bold leading-tight text-white">За повече информация очакваме
+          да се свържете с нас на посочените контакти
         </h2>
       </div>
     </div>

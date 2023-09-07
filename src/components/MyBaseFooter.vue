@@ -1,7 +1,7 @@
 <template>
     <!-- Footer container -->
     <footer style="background-image: url('images/footer_images/footerbackground.jpg')"
-        class="bg-no-repeat bg-cover bg-center bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-500 dark:text-neutral-200 lg:text-left">
+        class="bg-no-repeat bg-cover bg-center bg-neutral-100 text-center dark:text-neutral-200 lg:text-left">
         <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
         <div class="mx-6 py-4 text-center md:text-left">
             <div class="flex justify-evenly items-center md:grid-cols-2 lg:grid-cols-4">
@@ -14,14 +14,28 @@
                     <p class="text-xl font-bold">
                         Метални изделия и конструкции - Sino68.
                     </p>
-                    <p>Метални изделия и конструкции, изработка и монтаж на гаражи,
-                        козирки, навеси стълбища, огради, парапети, врати, решетки и всякакви други нестандартни.</p>
+                    <p>Метални изделия и конструкции, изработка и монтаж на гаражи, козирки, <br>
+                        навеси, стълбища, огради, парапети, врати, решетки и всякакви други нестандартни.</p>
                 </div>
                 <!-- Contact section -->
                 <div>
                     <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                         Контакти
                     </h6>
+                    <a href="https://www.facebook.com/profile.php?id=100057161544123" target="_blank"
+                        class="mb-4 flex items-center justify-center md:justify-start cursor-pointer">
+                        <i class="fa-brands fa-facebook mr-4"></i>
+                        <u>Sino68</u>
+                    </a>
+                    <p class="mb-4 flex items-center justify-center md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        087 746 5985
+                    </p>
                     <p class="mb-4 flex items-center justify-center md:justify-start">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                             class="mr-3 h-5 w-5">
@@ -32,25 +46,6 @@
                         </svg>
                         ж.к. "Изгрев" 1018, Varna, Bulgaria
                     </p>
-                    <p class="mb-4 flex items-center justify-center md:justify-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="mr-3 h-5 w-5">
-                            <path
-                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                            <path
-                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                        </svg>
-                        simeon.yanev68@gmail.com
-                    </p>
-                    <p class="mb-4 flex items-center justify-center md:justify-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="mr-3 h-5 w-5">
-                            <path fill-rule="evenodd"
-                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        087 746 5985
-                    </p>
                 </div>
             </div>
         </div>
@@ -58,7 +53,7 @@
         <!--Copyright section-->
         <div class="bg-gradient-to-r from-slate-900 via-gray-800 to-stone-900 p-4 text-center">
             <span>© 2023 Sino68:</span>
-            <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="https://tailwind-elements.com/"> Всички
+            <a class="font-semibold text-neutral-600 dark:text-neutral-400" href="https://tailwind-elements.com/">Всички
                 права запазени</a>
         </div>
     </footer>

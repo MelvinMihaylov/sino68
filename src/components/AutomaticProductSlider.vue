@@ -54,7 +54,7 @@ img {
     height: auto;
     max-height: 600px;
     min-height: 300px;
-    width: 100%
+    width: 100%;
 }
 
 .prev,
