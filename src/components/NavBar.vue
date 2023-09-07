@@ -17,10 +17,10 @@
 
                 <input class="hidden" type="checkbox" id="menu-toggle" />
 
-                <div class="md:relative absolute top-7 md:top-0 left-0 hidden md:flex md:items-center md:w-auto order-3 md:order-1 font-bold text-white md:bg-transparent bg-white/20 backdrop-blur-md rounded-lg md:shadow-none"
-                    id="menu">
+                <div class="md:relative absolute top-7 md:top-0 left-0 hidden md:flex md:items-center md:w-auto order-3 md:order-1 font-bold text-white bg-white md:ring-0 shadow-lg ring-1 ring-black ring-opacity-5 rounded-lg md:shadow-none"
+                    id="menu" ref="menuOnMobile">
                     <nav id="nav">
-                        <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                        <ul class="md:flex items-center justify-between text-base text-gray-700 py-4 md:py-0 md:pt-0">
                             <li>
                                 <router-link to="/"
                                     class="inline-block no-underline hover:text-purple-700 py-2 px-4">Каталог
