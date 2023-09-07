@@ -2,12 +2,16 @@
   <section class="pt-24 dark:bg-gray-900">
     <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="place-self-center mr-auto lg:col-span-7">
-        <h1 class="mb-4 max-w-2xl text-3xl font-extrabold leading-none md:text-5xl xl:text-5xl dark:text-white">Sino68 -
-          Каталог за изделяи от ковано желязо</h1>
+        <h1 class="mb-10 max-w-2xl text-3xl font-extrabold leading-none md:text-5xl xl:text-5xl dark:text-white">
+          Каталог за изделия от ковано желязо - Sino68</h1>
         <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          Ние сме страстни за красивите и изящни изделия от ковано желязо, които обогатяват и украсяват вашия дом и
-          градина. Ние предлагаме уникални и ръчно
-          изработени изделия, които ще ви вдъхновят и ще усъвършенстват визията на вашия дом.
+          Добре дошли в света на изкуството и елегантността на кованото желязо!
+          <br><br>
+          Нашият уебсайт е мястото, където може да откриете уникални и изискани изделия, които ще преобразят вашия дом и
+          градина.
+          <br><br>
+          Благодарим ви, че сте избрали да ни посетите и се надяваме да ви вдъхновим да създадете елегантен и уютен дом с
+          нашите изделия от ковано желязо. Не се колебайте да се свържете с нас за всякакви въпроси и консултации.
         </p>
         <a href="/"
           class="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -32,7 +36,7 @@
   <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
       <h2
-        class="mb-8 text-2xl font-extrabold tracking-tight leading-tight text-center text-gray-900 lg:mb-16 dark:text-white md:text-3xl">
+        class="mb-8 text-xl md:text-4xl tracking-tight leading-tight text-center text-gray-500 lg:mb-16 dark:text-gray-500">
         Качествени изделия от ковано желязо
       </h2>
       <div
