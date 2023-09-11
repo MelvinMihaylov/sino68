@@ -16,7 +16,7 @@ export default {
 #loading {
     position: absolute;
     z-index: 1000;
-    background: radial-gradient(circle, rgba(248, 198, 141, 0.13) 0%, rgba(94, 50, 3, 0.164) 100%);
+    background: radial-gradient(circle, rgba(185, 185, 184, 0.37) 0%, rgba(75, 75, 75, 0.356) 100%);
     height: 100vh;
     width: 100vw;
     text-align: center;
@@ -32,7 +32,7 @@ export default {
 }
 
 .loader {
-    color: rgb(104, 3, 3);
+    color: rgb(0, 0, 0);
     font-size: 90px;
     text-indent: -9999em;
     overflow: hidden;

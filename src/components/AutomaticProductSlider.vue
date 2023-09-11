@@ -14,10 +14,10 @@ export default {
     data() {
         return {
             images: [
-                "/images/slider_images/ograda_kovano_jelqzo.jpg",
-                "/images/slider_images/ograda2.jpg",
-                "/images/slider_images/klasicheska-ograda.jpg",
-                "/images/pluzgashta-vrata-luben-karavelov.jpg",
+                "/images/slider_images/metalni_ogradi1.jpg",
+                "/images/slider_images/metalni_ogradi2.jpg",
+                "/images/slider_images/metalni_ogradi3.jpg",
+                "/images/slider_images/metalni_ogradi4.jpg",
             ],
             timer: null,
             currentIndex: 0
@@ -30,7 +30,7 @@ export default {
 
     methods: {
         startSlide: function () {
-            this.timer = setInterval(this.next, 3000);
+            this.timer = setInterval(this.next, 3500);
         },
 
         next: function () {
