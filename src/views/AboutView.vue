@@ -158,11 +158,21 @@
   </section>
 
   <section class="bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center">
         <h2 class="mb-4 text-2xl font-bold leading-tight text-white">За повече информация очакваме
           да се свържете с нас на посочените контакти
         </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-800">
+    <div class="relative w-full h-96">
+      <div class="absolute inset-0 bg-gray-700 opacity-80 rounded-md">
+        <iframe class="absolute top-0 left-0 w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d744401.075866247!2d27.56312355!3d43.21333375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62f04081fb057b%3A0x55fca85d02e2f9fd!2z0JzQtdGC0LDQu9C90Lgg0LjQt9C00LXQu9C40Y8g0Lgg0LrQvtC90YHRgtGA0YPQutGG0LjQuCAtIFNpbm82OA!5e0!3m2!1sbg!2sbg!4v1694508969611!5m2!1sbg!2sbg"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
