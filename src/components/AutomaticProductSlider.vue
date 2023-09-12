@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="relative md:text-[20px] text-[13px]">
         <div v-for="i in [currentIndex]" :key="i">
-            <img :src="currentImg" />
+            <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+            <a class="next" @click="next" href="#">&#10095; Next</a>
+            <img class="fade-in-image" :src="currentImg" />
         </div>
-        <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-        <a class="next" @click="next" href="#">&#10095; Next</a>
     </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 
     methods: {
         startSlide: function () {
-            this.timer = setInterval(this.next, 3500);
+            this.timer = setInterval(this.next, 5300);
         },
 
         next: function () {
@@ -57,6 +57,20 @@ img {
     width: 100%;
 }
 
+.fade-in-image {
+    animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .prev,
 .next {
     cursor: pointer;
@@ -66,7 +80,6 @@ img {
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
     transition: 0.7s ease;
     border-radius: 0 4px 4px 0;
     text-decoration: none;

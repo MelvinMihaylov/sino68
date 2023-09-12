@@ -23,11 +23,11 @@
                         <ul class="md:flex items-center justify-between text-base text-gray-700 py-4 md:py-0 md:pt-0">
                             <li>
                                 <router-link to="/"
-                                    class="inline-block no-underline hover:text-purple-700 py-2 px-4">Каталог
+                                    class="inline-block no-underline hover:text-yellow-500 py-2 px-4">Каталог
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="about" class="inline-block no-underline hover:text-purple-700 py-2 px-4">За
+                                <router-link to="about" class="inline-block no-underline hover:text-yellow-500 py-2 px-4">За
                                     нас
                                 </router-link>
                             </li>
