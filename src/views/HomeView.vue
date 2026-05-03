@@ -1,53 +1,146 @@
 <template>
-  <!-- <product-slider /> -->
-  <div class="h-[270px] md:h-[600px]">
+  <div class="pb-20">
     <AutomaticProductSlider />
-  </div>
 
-  <section class="bg-white py-8">
-    <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-      <nav id="store" class="w-full top-0 px-6 py-1">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-          <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl" href="#">
-            Каталог
-          </a>
+    <section id="catalog" class="relative mt-4 z-10 pb-12 sm:mt-6 sm:pb-16">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          class="overflow-hidden rounded-[24px] border border-white/70 bg-white/80 p-6 shadow-[0_35px_100px_-50px_rgba(15,23,42,0.55)] backdrop-blur-xl sm:p-8 lg:p-10"
+        >
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-amber-600">Sino 68</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Каталог с по-модерна визия и по-лесен избор
+            </h2>
+            <p class="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+              Реални проекти за врати, огради, парапети, навеси и конструкции, представени в
+              по-чист и по-съвременен каталог с бърз филтър по категории.
+            </p>
+          </div>
 
-          <div class="flex items-center" id="store-nav-content">
-            <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-              <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24">
-                <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
-              </svg>
-            </a>
+          <div class="mt-8 rounded-[20px] border border-slate-200/80 bg-slate-50/90 p-4 sm:p-6">
+            <div class="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                  Филтър по категория
+                </p>
+                <h3 class="mt-2 text-xl font-semibold tracking-tight text-slate-900">
+                  Избери типа проект, който искаш да разгледаш
+                </h3>
+              </div>
 
-            <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-              <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24">
-                <path
-                  d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
-              </svg>
-            </a>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  v-for="category in categoryOptions"
+                  :key="category.name"
+                  type="button"
+                  class="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-semibold transition duration-200"
+                  :class="
+                    selectedCategory === category.name
+                      ? 'border-transparent bg-slate-900 text-white shadow-[0_18px_35px_-22px_rgba(15,23,42,0.8)]'
+                      : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900'
+                  "
+                  @click="selectCategory(category.name)"
+                >
+                  <span>{{ category.name }}</span>
+                  <span
+                    class="rounded-xl px-2 py-0.5 text-xs"
+                    :class="
+                      selectedCategory === category.name
+                        ? 'bg-white/20 text-white'
+                        : 'bg-slate-100 text-slate-500'
+                    "
+                  >
+                    {{ category.count }}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="mt-5 flex flex-col gap-3 border-t border-slate-200/80 pt-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <p>
+                Показани <span class="font-semibold text-slate-900">{{ visibleProducts.length }}</span>
+                от <span class="font-semibold text-slate-900">{{ filteredProducts.length }}</span>
+                проекта
+                <span v-if="selectedCategory !== allCategoriesLabel">
+                  в категория
+                  <span class="font-semibold text-amber-600">{{ selectedCategory }}</span>
+                </span>
+              </p>
+
+              <button
+                v-if="selectedCategory !== allCategoriesLabel"
+                type="button"
+                class="inline-flex items-center gap-2 self-start rounded-2xl bg-white px-4 py-2 font-semibold text-slate-700 shadow-sm transition duration-200 hover:text-slate-900"
+                @click="resetCategory"
+              >
+                <i class="fa-solid fa-rotate-left text-xs"></i>
+                Изчисти филтъра
+              </button>
+            </div>
+          </div>
+
+          <TransitionGroup
+            name="list"
+            tag="div"
+            class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+          >
+            <product
+              v-for="product in visibleProducts"
+              :key="product.id"
+              class="cursor-pointer"
+              :product="product"
+              @click.prevent="productClick(product)"
+            />
+          </TransitionGroup>
+
+          <div
+            v-if="!filteredProducts.length"
+            class="mt-8 rounded-[20px] border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center"
+          >
+            <p class="text-lg font-semibold text-slate-900">Няма проекти в тази категория.</p>
+            <p class="mt-2 text-sm text-slate-500">
+              Избери друга категория или върни всички проекти.
+            </p>
+          </div>
+
+          <div v-else-if="canLoadMore" class="mt-8 flex justify-center">
+            <button
+              type="button"
+              class="inline-flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.65)] transition duration-200 hover:border-slate-300 hover:text-slate-900"
+              @click="loadMore"
+            >
+              <span>Покажи още проекти</span>
+              <i class="fa-solid fa-arrow-down-long text-xs"></i>
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
+    </section>
 
-      <TransitionGroup name="list">
-        <product class="cursor-pointer" @click.prevent="productClick(product)" v-for="product in loadedProducts"
-          :key="product.id" :product="product" />
-      </TransitionGroup>
-    </div>
-  </section>
-  <Transition name="fadeProduct">
-    <div v-if="showProductModal">
-      <SingleProductModal @closeModal="closeModal" :product="product" :key="product.id" />
-    </div>
-  </Transition>
+    <Transition name="fadeProduct">
+      <div v-if="showProductModal && product">
+        <SingleProductModal
+          :product="product"
+          :can-go-prev="canGoPrev"
+          :can-go-next="canGoNext"
+          @closeModal="closeModal"
+          @goPrev="goPrevProduct"
+          @goNext="goNextProduct"
+        />
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <script>
 import Product from '../components/Product.vue'
 import AutomaticProductSlider from '../components/AutomaticProductSlider.vue'
 import SingleProductModal from '../components/SingleProductModal.vue'
+
+const ALL_CATEGORIES_LABEL = 'Всички'
 
 export default {
   name: 'home',
@@ -59,13 +152,61 @@ export default {
   data() {
     return {
       products: [],
-      loadedProducts: [],
+      visibleCount: 8,
+      productsPerPage: 8,
+      selectedCategory: ALL_CATEGORIES_LABEL,
       showProductModal: false,
-      product: []
+      product: null
+    }
+  },
+  computed: {
+    allCategoriesLabel() {
+      return ALL_CATEGORIES_LABEL
+    },
+    categoryOptions() {
+      const categoryCounts = this.products.reduce((counts, product) => {
+        counts[product.category] = (counts[product.category] || 0) + 1
+        return counts
+      }, {})
+
+      const sortedCategories = Object.entries(categoryCounts)
+        .sort(([firstCategory], [secondCategory]) => firstCategory.localeCompare(secondCategory, 'bg'))
+        .map(([name, count]) => ({ name, count }))
+
+      return [{ name: ALL_CATEGORIES_LABEL, count: this.products.length }, ...sortedCategories]
+    },
+    filteredProducts() {
+      if (this.selectedCategory === ALL_CATEGORIES_LABEL) {
+        return this.products
+      }
+
+      return this.products.filter((product) => product.category === this.selectedCategory)
+    },
+    modalProducts() {
+      return this.filteredProducts
+    },
+    currentProductIndex() {
+      if (!this.product) {
+        return -1
+      }
+
+      return this.modalProducts.findIndex((product) => product.id === this.product.id)
+    },
+    visibleProducts() {
+      return this.filteredProducts.slice(0, this.visibleCount)
+    },
+    canLoadMore() {
+      return this.visibleCount < this.filteredProducts.length
+    },
+    canGoPrev() {
+      return this.currentProductIndex > 0
+    },
+    canGoNext() {
+      return this.currentProductIndex > -1 && this.currentProductIndex < this.modalProducts.length - 1
     }
   },
   methods: {
-    getProduct() {
+    getProducts() {
       const products = [
         {
           id: 2,
@@ -462,77 +603,89 @@ export default {
 
       ]
 
-      const product = []
-
-      let found = true
-      let currentProductIndex = 0
-
-      while (found) {
-        if (this.loadedProducts.length <= currentProductIndex) {
-          let perPage = 8
-          let prodLen = products.length
-          let currentLen = currentProductIndex + perPage
-
-          if (prodLen < currentLen) {
-            perPage = prodLen - currentProductIndex
-          }
-
-          for (let i = 0; i < perPage; i++) {
-            this.loadedProducts.push({
-              id: products[currentProductIndex + i].id,
-              location: products[currentProductIndex + i].location,
-              name: products[currentProductIndex + i].name,
-              imgSRC: products[currentProductIndex + i].imgSRC,
-              category: products[currentProductIndex + i].category
-            })
-          }
-
-          found = false
-        }
-        currentProductIndex++
-      }
-
-      return product
+      return products
     },
     handleScroll() {
-      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 500) {
-        this.getProduct()
+      if (
+        this.canLoadMore &&
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 280
+      ) {
+        this.loadMore()
       }
+    },
+    loadMore() {
+      this.visibleCount = Math.min(this.visibleCount + this.productsPerPage, this.filteredProducts.length)
+    },
+    selectCategory(category) {
+      this.selectedCategory = category
+      this.visibleCount = this.productsPerPage
+    },
+    resetCategory() {
+      this.selectCategory(ALL_CATEGORIES_LABEL)
     },
     productClick(product) {
       this.showProductModal = true
       this.product = product
+    },
+    setActiveProductByIndex(index) {
+      if (index < 0 || index >= this.modalProducts.length) {
+        return
+      }
+
+      this.product = this.modalProducts[index]
+      this.visibleCount = Math.max(this.visibleCount, index + 1)
+    },
+    goPrevProduct() {
+      this.setActiveProductByIndex(this.currentProductIndex - 1)
+    },
+    goNextProduct() {
+      this.setActiveProductByIndex(this.currentProductIndex + 1)
     },
     closeModal() {
       this.showProductModal = false
     }
   },
   mounted() {
-    this.products = this.getProduct()
-    window.addEventListener('scroll', this.handleScroll)
+    this.products = this.getProducts()
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
 
 <style>
 .list-enter-active,
-.list-leave-active {
-  transition: all 0.8s ease-in-out;
+.list-leave-active,
+.list-move {
+  transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateY(24px);
 }
 
 .fadeProduct-enter-active,
 .fadeProduct-leave-active {
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.16s ease;
 }
 
 .fadeProduct-enter-from,
 .fadeProduct-leave-to {
   opacity: 0;
+}
+
+.fadeProduct-enter-active .modal-panel,
+.fadeProduct-leave-active .modal-panel {
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.fadeProduct-enter-from .modal-panel,
+.fadeProduct-leave-to .modal-panel {
+  opacity: 0;
+  transform: translateY(8px) scale(0.985);
 }
 </style>

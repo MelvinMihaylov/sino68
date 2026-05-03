@@ -1,14 +1,10 @@
 <template>
   <div id="page-container">
-    <div id="content-wrap">
-      <!-- all other page content -->
-      <nav-bar />
+    <nav-bar />
 
-      <div>
-        <LoadingScreen v-if="isLoading"></LoadingScreen>
-        <p></p>
-      </div>
+    <LoadingScreen v-if="isLoading" />
 
+    <main id="content-wrap">
       <router-view v-slot="{ Component, route }">
         <transition name="nextPageFade" mode="out-in">
           <div :key="route.name">
@@ -16,26 +12,22 @@
           </div>
         </transition>
       </router-view>
-    </div>
+    </main>
 
-    <footer id="footer">
-      <MyBaseFooter />
-    </footer>
+    <MyBaseFooter />
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
-import ScrollIndicator from './components/ScrollIndicator.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
 import MyBaseFooter from './components/MyBaseFooter.vue'
 
 export default {
   components: {
-    'NavBar': NavBar,
-    'MyBaseFooter': MyBaseFooter,
-    'ScrollIndicator': ScrollIndicator,
-    'LoadingScreen': LoadingScreen,
+    NavBar,
+    MyBaseFooter,
+    LoadingScreen
   },
   data() {
     return {
@@ -65,20 +57,13 @@ export default {
 }
 
 #page-container {
-  position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
 }
 
 #content-wrap {
-  padding-bottom: 10px;
-  /* Footer height */
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 10px;
-  /* Footer height */
+  flex: 1;
 }
 </style>

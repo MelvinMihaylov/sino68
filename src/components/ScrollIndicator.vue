@@ -1,32 +1,37 @@
-<script>
-// When the user scrolls the page, execute myFunction
-window.onscroll = function () { myFunction() };
-
-function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
-</script>
-
 <template>
-    <div class="progress-container">
-        <div class="progress-bar bg-gradient-to-r from-red-400 from-30% via-red-800 via-60% to-purple-900 to-90%" id="myBar"></div>
-    </div>
+  <div class="h-1.5 overflow-hidden rounded-full bg-slate-200/75">
+    <div
+      class="h-full rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-sky-500 transition-[width] duration-150 ease-out"
+      :style="{ width: `${scrollProgress}%` }"
+    ></div>
+  </div>
 </template>
 
-<style>
-/* The progress container (grey background) */
-.progress-container {
-    width: 100%;
-    height: 9px;
-    background: rgb(243, 236, 223);
-}
+<script>
+export default {
+  name: 'ScrollIndicator',
+  data() {
+    return {
+      scrollProgress: 0
+    }
+  },
+  methods: {
+    updateProgress() {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      const scrollHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight
 
-/* The progress bar (scroll indicator) */
-.progress-bar {
-    height: 11px;
-    width: 0%;
+      this.scrollProgress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0
+    }
+  },
+  mounted() {
+    this.updateProgress()
+    window.addEventListener('scroll', this.updateProgress, { passive: true })
+    window.addEventListener('resize', this.updateProgress)
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.updateProgress)
+    window.removeEventListener('resize', this.updateProgress)
+  }
 }
-</style>
+</script>

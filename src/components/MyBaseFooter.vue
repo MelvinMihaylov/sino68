@@ -1,66 +1,124 @@
 <template>
-    <!-- Footer container -->
-    <footer style="background-image: url('images/footer_images/footerbackground.jpg')"
-        class="bg-no-repeat bg-cover bg-center text-center text-neutral-200 lg:text-left">
-        <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
-        <div class="mx-6 py-4 text-center md:text-left">
-            <div class="flex justify-evenly items-center md:grid-cols-2 lg:grid-cols-4">
-                <!-- Tailwind Elements section -->
-                <div class="hidden lg:block">
-                    <h6 class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-                        <i class="fa-solid fa-circle-info mr-2"></i>
-                        За нас
-                    </h6>
-                    <p class="text-xl font-bold">
-                        Метални изделия и конструкции - Sino68.
-                    </p>
-                    <p>Метални изделия и конструкции, изработка и монтаж на гаражи, козирки, <br>
-                        навеси, стълбища, огради, парапети, врати, решетки и всякакви други нестандартни.</p>
-                </div>
-                <!-- Contact section -->
-                <div>
-                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                        Контакти
-                    </h6>
-                    <a href="https://www.facebook.com/profile.php?id=100057161544123" target="_blank"
-                        class="mb-4 flex items-center justify-center md:justify-start cursor-pointer">
-                        <i class="fa-brands fa-facebook mr-4"></i>
-                        <u>Sino68</u>
-                    </a>
-                    <p class="mb-4 flex items-center justify-center md:justify-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="mr-3 h-5 w-5">
-                            <path fill-rule="evenodd"
-                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        087 746 5985
-                    </p>
-                    <p class="mb-4 flex items-center justify-center md:justify-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="mr-3 h-5 w-5">
-                            <path
-                                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-                            <path
-                                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-                        </svg>
-                        ж.к. "Изгрев" 1018, Varna, Bulgaria
-                    </p>
-                </div>
-            </div>
-        </div>
+  <footer id="footer" class="mt-20 bg-slate-950 text-slate-200">
+    <div class="mx-auto max-w-7xl px-4 pb-6 pt-14 sm:px-6 lg:px-8">
+      <div
+        class="overflow-hidden rounded-[24px] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.16),transparent_30%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.94))] p-8 shadow-[0_30px_100px_-60px_rgba(15,23,42,1)] sm:p-10"
+      >
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_1fr]">
+          <div class="max-w-xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-amber-300">Sino 68</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white">
+              Метални изделия и конструкции с модерно изпълнение и надежден монтаж
+            </h2>
+            <p class="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+              Изработка и монтаж на врати, огради, парапети, козирки, навеси, решетки и
+              нестандартни метални конструкции за домове, дворове и бизнес обекти.
+            </p>
 
-        <!--Copyright section-->
-        <div class="bg-gradient-to-r from-slate-900 via-gray-800 to-stone-900 p-4 text-center">
-            <span>© 2023 Sino68:</span>
-            <a class="font-semibold text-neutral-400"> Всички
-                права запазени</a>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span
+                v-for="tag in serviceTags"
+                :key="tag"
+                class="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+              >
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-300">
+              Навигация
+            </h3>
+            <div class="mt-5 flex flex-col gap-3 text-sm">
+              <router-link
+                to="/"
+                class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
+              >
+                <i class="fa-solid fa-layer-group text-amber-300"></i>
+                Каталог
+              </router-link>
+              <router-link
+                to="/about"
+                class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
+              >
+                <i class="fa-solid fa-circle-info text-sky-300"></i>
+                За нас
+              </router-link>
+              <router-link
+                :to="{ path: '/', hash: '#catalog' }"
+                class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
+              >
+                <i class="fa-solid fa-filter text-emerald-300"></i>
+                Филтрирай проекти
+              </router-link>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-300">
+              Контакти
+            </h3>
+            <div class="mt-5 space-y-3 text-sm text-slate-200">
+              <a
+                href="tel:0877465985"
+                class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition duration-200 hover:bg-white/10"
+              >
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-amber-300"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <span class="font-semibold">087 746 5985</span>
+              </a>
+              <a
+                href="https://goo.gl/maps/bfEmhVuF8HetXXVw9"
+                target="_blank"
+                rel="noreferrer"
+                class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition duration-200 hover:bg-white/10"
+              >
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sky-300"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span class="font-semibold">ж.к. Изгрев 1018, Варна</span>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100057161544123"
+                target="_blank"
+                rel="noreferrer"
+                class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition duration-200 hover:bg-white/10"
+              >
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-blue-300"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="font-semibold">Sino68 във Facebook</span>
+              </a>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <div
+        class="mt-6 flex flex-col gap-3 border-t border-slate-800 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <p>© 2023 Sino68. Всички права запазени.</p>
+        <p>Каталог за метални изделия и конструкции за Варна и региона.</p>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
 export default {
-    name: "BaseFooter",
+  name: 'BaseFooter',
+  data() {
+    return {
+      serviceTags: ['Врати', 'Огради', 'Парапети', 'Навеси', 'Конструкции']
+    }
+  }
 }
 </script>
