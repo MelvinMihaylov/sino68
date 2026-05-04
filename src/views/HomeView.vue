@@ -2,7 +2,7 @@
   <div class="pb-20">
     <AutomaticProductSlider />
 
-    <section id="catalog" class="relative mt-4 pb-12 sm:mt-6 sm:pb-16">
+    <section id="catalog" class="relative mt-4 scroll-mt-28 pb-12 sm:mt-6 sm:pb-16">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           class="overflow-hidden rounded-[24px] border border-white/70 bg-white/80 p-6 shadow-[0_35px_100px_-50px_rgba(15,23,42,0.55)] backdrop-blur-xl sm:p-8 lg:p-10"
@@ -18,7 +18,10 @@
             </p>
           </div>
 
-          <div class="mt-8 rounded-[20px] border border-slate-200/80 bg-slate-50/90 p-4 sm:p-6">
+          <div
+            id="catalog-filter"
+            class="mt-8 scroll-mt-28 rounded-[20px] border border-slate-200/80 bg-slate-50/90 p-4 sm:p-6"
+          >
             <div class="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">

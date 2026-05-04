@@ -31,27 +31,16 @@
               Навигация
             </h3>
             <div class="mt-5 flex flex-col gap-3 text-sm">
-              <router-link
-                to="/"
+              <button
+                v-for="link in navigationLinks"
+                :key="link.label"
+                type="button"
                 class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
+                @click="navigateToSection(link.to)"
               >
-                <i class="fa-solid fa-layer-group text-amber-300"></i>
-                Каталог
-              </router-link>
-              <router-link
-                to="/about"
-                class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
-              >
-                <i class="fa-solid fa-circle-info text-sky-300"></i>
-                За нас
-              </router-link>
-              <router-link
-                :to="{ path: '/', hash: '#catalog' }"
-                class="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold text-slate-100 transition duration-200 hover:bg-white/10"
-              >
-                <i class="fa-solid fa-filter text-emerald-300"></i>
-                Филтрирай проекти
-              </router-link>
+                <i :class="[link.icon, link.iconColor]"></i>
+                {{ link.label }}
+              </button>
             </div>
           </div>
 
@@ -113,11 +102,47 @@
 </template>
 
 <script>
+import { scrollToHashTarget } from '../utils/hashScroll'
+
 export default {
   name: 'BaseFooter',
   data() {
     return {
-      serviceTags: ['Врати', 'Огради', 'Парапети', 'Навеси', 'Конструкции']
+      serviceTags: ['Врати', 'Огради', 'Парапети', 'Навеси', 'Конструкции'],
+      navigationLinks: [
+        {
+          label: 'Каталог',
+          icon: 'fa-solid fa-layer-group',
+          iconColor: 'text-amber-300',
+          to: { path: '/', hash: '#catalog' }
+        },
+        {
+          label: 'За нас',
+          icon: 'fa-solid fa-circle-info',
+          iconColor: 'text-sky-300',
+          to: { path: '/about', hash: '#about' }
+        },
+        {
+          label: 'Филтрирай проекти',
+          icon: 'fa-solid fa-filter',
+          iconColor: 'text-emerald-300',
+          to: { path: '/', hash: '#catalog-filter' }
+        }
+      ]
+    }
+  },
+  methods: {
+    async navigateToSection(to) {
+      const resolvedRoute = this.$router.resolve(to)
+      const isSameTarget =
+        this.$route.path === resolvedRoute.path && this.$route.hash === resolvedRoute.hash
+
+      if (isSameTarget && resolvedRoute.hash) {
+        await scrollToHashTarget(resolvedRoute.hash)
+        return
+      }
+
+      await this.$router.push(to)
     }
   }
 }
