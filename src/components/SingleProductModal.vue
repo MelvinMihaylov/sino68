@@ -94,8 +94,7 @@
                   {{ product.name }}
                 </h4>
                 <p id="name" class="text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
-                  Индивидуален проект от Sino 68 с фокус върху здравина, чиста визия и прецизен
-                  монтаж.
+                  {{ product.description || 'Индивидуален проект от Sino 68 с фокус върху здравина, чиста визия и прецизен монтаж.' }}
                 </p>
               </div>
 
@@ -110,6 +109,16 @@
                 >
                   Монтаж на място
                 </span>
+                <a
+                  v-if="product.sourceUrl"
+                  :href="product.sourceUrl"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition duration-200 hover:bg-slate-800"
+                >
+                  Facebook публикация
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
               </div>
             </div>
           </div>

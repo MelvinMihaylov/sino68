@@ -153,8 +153,8 @@ export default {
   data() {
     return {
       products: [],
-      visibleCount: 8,
-      productsPerPage: 8,
+      visibleCount: 12,
+      productsPerPage: 12,
       selectedCategory: ALL_CATEGORIES_LABEL,
       showProductModal: false,
       product: null
@@ -209,6 +209,108 @@ export default {
   methods: {
     getProducts() {
       const products = [
+        {
+          id: 1001,
+          location: 'с. Каменар, Варна',
+          name: 'Метален капак за кладенец в с. Каменар',
+          imgSRC:
+            'https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/647539531_1446685313913506_6807227250868151201_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_ohc=DbPqz-8SZjYQ7kNvwFKbPSW&_nc_oc=AdoS-SZ0IKQjdCNpf0Lz40Tag7VBDIpc6oefjqhCTo5hTM8kKceCeVoZF8AlOlNKyp0&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af4ElSwjNrmW0m1-GBuZsJUa8PnhUTQE5BK1SosdTetkHw&oe=69FE2156',
+          category: 'Конструкции',
+          description: 'Метален капак за кладенец в с. Каменар - Варна.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid02LHxpraAB9higWovAMeAmsnpSqeMMXnT7UnRFHkitEL7uriKWRuuEkipPUCURGHh2l&id=100057161544123'
+        },
+        {
+          id: 1002,
+          location: 'ул. Начо Начев 4, Варна',
+          name: 'Метална врата към гаражи на ЖСК',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/602335435_1388916269690411_2889166170648087253_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=7b2446&_nc_ohc=Ed5P9nql3HAQ7kNvwFaovG3&_nc_oc=AdoLqexn5Itam-iwtpRqAiiwVBXhSE5vnFk6rBdhfbhXZLRw8DoBYZY1fT1GbwyKXac&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af4NHjI1Yn02al-XoEDDF9K3PgdlPpYX8wBiw2j_zc8rhA&oe=69FE22C8',
+          category: 'Врати',
+          description: 'Метална врата към подход за гаражи на ЖСК в гр. Варна, ул. Начо Начев 4.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid07nUtMUMVRYBRaYGkDDZ4SYu2ZDYkh5ZNBt14DQUxrtS5mmVvaJeTNGab3nxL3ySel&id=100057161544123'
+        },
+        {
+          id: 1003,
+          location: 'Варна',
+          name: 'Метални врати за мази и сервизни помещения',
+          imgSRC:
+            'https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/605296217_1388914486357256_819330082458640952_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=ceJZ73TrtYwQ7kNvwH9Q9g-&_nc_oc=AdqFPbNhSZSkAdQLVzmzCP8AIjaUqugvTSnEwQXjPzhnwKMFpU8Bb7Tq3XfJbJ0oTEA&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af5PySfE18RTp5AfZGHUkr6ZHXEU058eyXz48X_2FYttLA&oe=69FE2255',
+          category: 'Врати',
+          description:
+            'Метални врати в гр. Варна за мази, килери, изби, котелни помещения и подобни зони.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid0FmCorwXV5sc84jA8EUoJuMjSkPPynqVDcJ6piSyaLkDJDoSj2PMRyXXvUHuSoghSl&id=100057161544123'
+        },
+        {
+          id: 1004,
+          location: 'Варна',
+          name: 'Складово помещение за заведение',
+          imgSRC:
+            'https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/604503374_1388912383024133_6270925857958533265_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_ohc=3JhmL_aUlosQ7kNvwEKfW_C&_nc_oc=Adofrak646GGcV1GV_8vf49VfYYN7LZNEKMPh7XVCmURnEfOjRJ-mQggDAY5F3iUpDk&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af57jJAOxnxLq7wxnufdxMZYkBBqFAutkdmBmhv6o49YGQ&oe=69FE2E13',
+          category: 'Конструкции',
+          description:
+            'Складово помещение за заведение за бърза закуска. През новата година ще се облицова с термопанели.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid0pSSH43CN1dCDdE8YgaC5bJYTqXbwVx9qFB3UzQHE99ss1Bw2vy1dmimpdAW5PhRdl&id=100057161544123'
+        },
+        {
+          id: 1005,
+          location: 'с. Каменар, Варна',
+          name: 'Плъзгаща врата за гараж в с. Каменар',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/605275013_1388910759690962_2289814290159365828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=tObMyZy6GzwQ7kNvwEnQ3df&_nc_oc=AdoXLOg_hsJxHsz0_G-crVoRqpHbPCx8vLCTHjKksDa_rICNhAUxSo1W8Toe9aVXfCk&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af7KXJCbeyB27HfFP9M-6vIwtz1ftJqvZ17jJYta4vVJDA&oe=69FE1CF3',
+          category: 'Врати',
+          description: 'Плъзгаща врата за гараж в с. Каменар, гр. Варна.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid02rNhm7AAWwibQwFkZYzgCUNVwsRQL2fAHZerRGpt53dZdiGZsSPJJWGvDw68tynFbl&id=100057161544123'
+        },
+        {
+          id: 1006,
+          location: 'кв. Виница, Варна',
+          name: 'Метални огради на ЖСК във Виница',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/605150848_1388907536357951_8655377465401821747_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=vAoZdm8YC_oQ7kNvwHJikiM&_nc_oc=AdrlxFKwvuUy8qAwpVzedvA_wtCww-IcNJwFvER-GfTwlMG9KKZ4GLI5ig3qkaSHlIk&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af7IZzPJMY2Qmi2JlutmkQxIVr9IkI2JSv2q_YLDSusTMw&oe=69FE3327',
+          category: 'Огради',
+          description: 'Метални огради на ЖСК във кв. Виница, гр. Варна.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid0K6ceosAME9BfcfRFpFkRc5yZoMCCXRyByFX26JdM71TcWbWiiRLPEpwkhdbaWjdfl&id=100057161544123'
+        },
+        {
+          id: 1007,
+          location: 'с. Приселци, Варна',
+          name: 'Арки за рози в с. Приселци',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/604647650_1388905759691462_5949496379957214186_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=TqmQR792PccQ7kNvwGABItN&_nc_oc=AdpL8pgM6PccK_8oIQFVrOL2HRIgSGimwtXHZzPfSRWWoqQtoPX8qjsp4Q8pQSyrimg&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af6Efu2_YoEIb_g_i1eb9yz2KWv0TyDfUnoaj2JeUqdUVw&oe=69FE2E5A',
+          category: 'Конструкции',
+          description: 'Арки за рози в с. Приселци, гр. Варна.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid022H9e8QyDbbxNFVRafKdcSwhzo3C3CDRBkjQ1EsSgS35WE4g79g8p5FkkBjy9WDHgl&id=100057161544123'
+        },
+        {
+          id: 1008,
+          location: 'ж.к. Младост, Варна',
+          name: 'Сгъваема рампа за колички',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/603865397_1388902749691763_1234311529539551761_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=XKR40JerTZ0Q7kNvwHXpJ2B&_nc_oc=AdrfcRG5p9fTfIKOmaw7rT-ZHOOnBnNXII1hO8z64Ct-FInsoNz0_JpKfkWEz5aYk5Y&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af6Ezo25rir5s8xdWcc38SzYrPSOBMifNZLTb4DesTKW4w&oe=69FE2BE9',
+          category: 'Конструкции',
+          description: 'Сгъваема рампа за колички в ж.к. Младост 116/10, гр. Варна.',
+          sourceUrl:
+            'https://www.facebook.com/permalink.php?story_fbid=pfbid02Jx6XUqPmPEJzMudDWYP1641W6LxNM4NBZnEf9WgbJ7N2vuh7Qf1LcEBtjeZchko4l&id=100057161544123'
+        },
+        {
+          id: 1009,
+          location: 'район Стария хлебозавод, Варна',
+          name: 'Охранителна решетка за входна врата',
+          imgSRC:
+            'https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-6/602992170_1388890089693029_3665683014630944868_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=j1C6DNPQEjQQ7kNvwE8My_6&_nc_oc=AdqqzS4RHluYWnP2kEWXUSCp7-hLIG90aUp9DJpfkY6aSms-MxOyQcMEyqYmRgKCDJQ&_nc_zt=23&_nc_ht=scontent-sof1-1.xx&_nc_gid=t_PrwGio39-BF_WI09ylGQ&_nc_ss=7020f&oh=00_Af6DcITNhM6WKWMjasWi988cVqHs4UShsNCOlMIy6XvKxw&oe=69FE5163',
+          category: 'Врати',
+          description:
+            'Допълнителна охранителна решетка за входна врата в района на Стария хлебозавод, гр. Варна.',
+          sourceUrl:
+            'https://www.facebook.com/photo.php?fbid=1388890086359696&set=a.206982924550424&type=3'
+        },
         {
           id: 2,
           location: 'Варна',
