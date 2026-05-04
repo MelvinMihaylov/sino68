@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer" class="mt-20 bg-slate-950 text-slate-200">
+  <footer id="footer" class="bg-slate-950 text-slate-200">
     <div class="mx-auto max-w-7xl px-4 pb-6 pt-14 sm:px-6 lg:px-8">
       <div
         class="overflow-hidden rounded-[24px] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.16),transparent_30%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.94))] p-8 shadow-[0_30px_100px_-60px_rgba(15,23,42,1)] sm:p-10"

@@ -2,7 +2,7 @@
   <div class="pb-20">
     <AutomaticProductSlider />
 
-    <section id="catalog" class="relative mt-4 z-10 pb-12 sm:mt-6 sm:pb-16">
+    <section id="catalog" class="relative mt-4 pb-12 sm:mt-6 sm:pb-16">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           class="overflow-hidden rounded-[24px] border border-white/70 bg-white/80 p-6 shadow-[0_35px_100px_-50px_rgba(15,23,42,0.55)] backdrop-blur-xl sm:p-8 lg:p-10"
@@ -120,9 +120,10 @@
       </div>
     </section>
 
-    <Transition name="fadeProduct">
-      <div v-if="showProductModal && product">
+    <Teleport to="body">
+      <Transition name="fadeProduct">
         <SingleProductModal
+          v-if="showProductModal && product"
           :product="product"
           :can-go-prev="canGoPrev"
           :can-go-next="canGoNext"
@@ -130,8 +131,8 @@
           @goPrev="goPrevProduct"
           @goNext="goNextProduct"
         />
-      </div>
-    </Transition>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 

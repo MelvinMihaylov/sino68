@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed inset-0 z-[120]" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 isolate z-[200]" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
 
-    <div class="relative z-10 flex min-h-full w-screen items-center justify-center overflow-y-auto p-4 sm:p-6">
+    <div class="relative z-[1] flex min-h-full w-screen items-center justify-center overflow-y-auto p-4 sm:p-6">
       <div class="flex min-h-full items-center justify-center">
         <div
           ref="modalRef"
